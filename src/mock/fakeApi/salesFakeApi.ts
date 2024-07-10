@@ -140,3 +140,8 @@ export default function salesFakeApi(server: Server, apiPrefix: string) {
         }
     )
 }
+
+export const getchihaja = async(datas)=>{
+    const {data} = await axios.get(`${apiPrefix}/sales/orders-details`,datas);
+    return data;
+}

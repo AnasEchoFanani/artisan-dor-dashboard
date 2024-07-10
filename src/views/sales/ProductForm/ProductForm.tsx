@@ -13,6 +13,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import { HiOutlineTrash } from 'react-icons/hi'
 import { AiOutlineSave } from 'react-icons/ai'
 import * as Yup from 'yup'
+import { getchihaja } from '@/mock/fakeApi/salesFakeApi'
 
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 type FormikRef = FormikProps<any>
@@ -156,7 +157,7 @@ const ProductForm = forwardRef<FormikRef, ProductForm>((props, ref) => {
                         : [],
                 }}
                 validationSchema={validationSchema}
-                onSubmit={(values: FormModel, { setSubmitting }) => {
+                onSubmit={async (values: FormModel, { setSubmitting }) => {
                     const formData = cloneDeep(values)
                     formData.tags = formData.tags.map((tag) => {
                         if (typeof tag !== 'string') {

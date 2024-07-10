@@ -18,6 +18,7 @@ import type {
     EventClickArg,
     DateSelectArg,
 } from '@fullcalendar/core'
+import { getchihaja } from '@/mock/fakeApi/salesFakeApi'
 
 injectReducer('crmCalendar', reducer)
 
@@ -28,8 +29,9 @@ const Calendar = () => {
     useEffect(() => {
         dispatch(getEvents())
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [])  
 
+  
     const onCellSelect = (event: DateSelectArg) => {
         const { start, end } = event
         dispatch(
