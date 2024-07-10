@@ -69,37 +69,7 @@ const appsNavigationConfig: NavigationTree[] = [
                     },
                 ],
             },
-            {
-                key: 'apps.account',
-                path: '',
-                title: 'Account',
-                translateKey: 'nav.appsAccount.account',
-                icon: 'account',
-                type: NAV_ITEM_TYPE_COLLAPSE,
-                authority: [ADMIN, USER],
-                subMenu: [
-                    {
-                        key: 'appsAccount.settings',
-                        path: `${APP_PREFIX_PATH}/account/settings/profile`,
-                        title: 'Settings',
-                        translateKey: 'nav.appsAccount.settings',
-                        icon: '',
-                        type: NAV_ITEM_TYPE_ITEM,
-                        authority: [ADMIN, USER],
-                        subMenu: [],
-                    },
-                    {
-                        key: 'appsAccount.invoice',
-                        path: `${APP_PREFIX_PATH}/account/invoice/36223`,
-                        title: 'Invoice',
-                        translateKey: 'nav.appsAccount.invoice',
-                        icon: '',
-                        type: NAV_ITEM_TYPE_ITEM,
-                        authority: [ADMIN, USER],
-                        subMenu: [],
-                    }
-                ],
-            },
+            
         ],
     },
 ]
