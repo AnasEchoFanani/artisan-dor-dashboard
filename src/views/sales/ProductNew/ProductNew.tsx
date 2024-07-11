@@ -6,6 +6,7 @@ import toast from '@/components/ui/toast'
 import Notification from '@/components/ui/Notification'
 import { useNavigate } from 'react-router-dom'
 import { apiCreateSalesProduct } from '@/services/SalesService'
+import {getProducts} from '@/mock/api/salesApi'
 
 const ProductNew = () => {
     const navigate = useNavigate()
@@ -19,6 +20,7 @@ const ProductNew = () => {
         values: FormModel,
         setSubmitting: SetSubmitting
     ) => {
+        const response = getProducts(values);
         setSubmitting(true)
         const success = await addProduct(values)
         setSubmitting(false)
